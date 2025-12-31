@@ -1,5 +1,5 @@
 /**
- * Updated: 6/2/2024 - Modified TestImage to include the p5.Image as a final optional parameter.
+ * Updated: 21/11/2023
  */
 
 /** CONSTANTS */
@@ -159,7 +159,7 @@ export const canvasStatus = {
                     }
                 }
                 this.imageObjects.push(args[0]);
-                this.shapes.push(new TestImage(imgX, imgY, imgW, imgH, origW, origH, this.imageMode, this.hasStroke, this.hasFill, this.fillColour, this.strokeColour, this.strokeWeight, args[0]));
+                this.shapes.push(new TestImage(imgX, imgY, imgW, imgH, origW, origH, this.imageMode, this.hasStroke, this.hasFill, this.fillColour, this.strokeColour, this.strokeWeight));
                 break;
             default:
                 console.log(type, "not implemented!");
@@ -891,12 +891,10 @@ export class TestText extends TestShape {
 export class TestImage extends TestShape {
     origW;
     origH;
-    img;
-    constructor(x, y, w, h, origW, origH, drawMode = CORNER, hasStroke = true, hasFill = true, fillColour = color(255), strokeColour = color(0), strokeWeight = 1, img = undefined) {
+    constructor(x, y, w, h, origW, origH, drawMode = CORNER, hasStroke = true, hasFill = true, fillColour = color(255), strokeColour = color(0), strokeWeight = 1) {
         super(IMAGE, x, y, w, h, hasStroke, hasFill, drawMode, fillColour, strokeColour, strokeWeight);
         this.origW = origW;
         this.origH = origH;
-        this.img = img;
         this.#checkDimensions(drawMode);
     }
 
