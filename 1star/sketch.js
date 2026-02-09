@@ -1,4 +1,5 @@
-function setup() {
+function setup() 
+{
     createCanvas(400, 300);
 }
 
@@ -12,7 +13,8 @@ function setup() {
  * // returns [1, 2, 3, 4]
  * maxValue(5);
  */
-function fillArray(maxValue) {
+function fillArray(maxValue) 
+{
     const arr = [];
     for (let i = 0; i < maxValue; i++) {
         arr.push(i);
@@ -34,6 +36,20 @@ function fillArray(maxValue) {
  * // returns true
  * search([5, -1, 9], 5);
  */
+function searchArray(arr, value)
+{
+    for (let i; i < arr.length; i++ )
+    {
+        if (arr[i] === value)
+        {
+            return true; 
+        }
+        else
+        {
+            return false; 
+        }
+    }
+}
 
 
 /**
