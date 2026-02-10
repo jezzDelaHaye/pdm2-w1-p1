@@ -36,19 +36,17 @@ function fillArray(maxValue)
  * // returns true
  * search([5, -1, 9], 5);
  */
-function searchArray(arr, value)
+function search(arr, value)
 {
-    for (let i; i < arr.length; i++ )
+    for (let i = 0; i < arr.length; i++ )
     {
         if (arr[i] === value)
         {
             return true; 
         }
-        else
-        {
-            return false; 
-        }
     }
+    return false;
+    
 }
 
 
@@ -62,6 +60,16 @@ function searchArray(arr, value)
  * // returns 0
  * total([])
  */
+function total(arr)
+{
+    let number = 0;
+    for (let i = 0; i < arr.length; i++)
+    {
+        number += arr[i]
+    }
+    return number; 
+
+}
 
 
 /**
@@ -75,7 +83,18 @@ function searchArray(arr, value)
  * // returns 0
  * count([0, 35, 3, 4, 3], 7)
  */
-
+function count(arr, value)
+{
+    let count = 0;
+    for (let i = 0; i < arr.length; i++ )
+    {
+        if (arr[i] === value)
+        {
+            count++; 
+        }
+    }
+    return count;
+}
 
 /**
  * Creates a new array that repeats the values in the original array the specified number 
@@ -89,3 +108,16 @@ function searchArray(arr, value)
  * // returns [4, 4, 4]
  * repeat([4], 3)
  */
+
+function repeat(arr, times)
+{
+    let repeatedArr = []
+    for (let i = 0; i < times; i++ )
+    {
+        for (let j = 0; j < arr.length; j++)
+        {
+            repeatedArr.push(arr[j])
+        }
+    }
+    return repeatedArr;
+}
